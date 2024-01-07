@@ -1,23 +1,21 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [nb,setNb]=useState(0);
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
+      <body className="App-body">
+        <div className="title">Counter</div>
+        <div className="value">{nb}</div>
+        <div className="buttons">
+          <button className="button" onClick={() => setNb(nb-1)}>DECREASE</button>
+          <button className="button" onClick={() => setNb(0)}>RESET</button>
+          <button className="button" onClick={() => setNb(nb+1)}>INCREASE</button>
+        </div>
+      </body>
     </div>
   );
 }
